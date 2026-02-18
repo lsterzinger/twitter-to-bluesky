@@ -59,7 +59,7 @@ def post_to_bluesky(text: str):
     """Authenticate to Bluesky and create a new post with the given text."""
     bsky = Client()
     bsky.login(os.environ['BLUESKY_HANDLE'], os.environ['BLUESKY_PASSWORD'])
-    bsky.post(text=text, embed=models.AppBskyEmbedExternal.Main)
+    bsky.post(text=text)
     print("✅ Posted to Bluesky:", text[:50])
 
 def main():
