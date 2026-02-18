@@ -2,7 +2,7 @@ name: X → Bluesky repost
 
 on:
   schedule:
-    - cron: '*/45 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
