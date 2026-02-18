@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-from atproto import Client
+from atproto import Client, models
 
 STATE_FILE = 'seen_ids.json'
 
@@ -59,7 +59,7 @@ def post_to_bluesky(text: str):
     """Authenticate to Bluesky and create a new post with the given text."""
     bsky = Client()
     bsky.login(os.environ['BLUESKY_HANDLE'], os.environ['BLUESKY_PASSWORD'])
-    bsky.post(text=text)
+    bsky.post(text=text, embed=models.AppBskyEmbedExternal.Main)
     print("✅ Posted to Bluesky:", text[:50])
 
 def main():
